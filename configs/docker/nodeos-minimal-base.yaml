@@ -9,8 +9,10 @@ services:
         expose: 
             - 8888
             - 9876
-        tmpfs:
-            - /ramdisk:defaults,nosuid,nodev,noatime,nodiratime,exec,size=64G
+        # tmpfs:
+        #     - /ramdisk:defaults,nosuid,nodev,noatime,nodiratime,exec,size=64G
+        volumes:
+            - /mnt/da/eos:/ramdisk
         ulimits:
             nproc: 1048576
             nofile:
